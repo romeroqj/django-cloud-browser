@@ -117,18 +117,19 @@ def browser(request, path='', template="cloud_browser/browser.html"):
             marker = objects[-1].name
             marker_part = relpath(marker, object_path)
 
-    return render_to_response(template,
-                              {'path': path,
-                               'marker': marker,
-                               'marker_part': marker_part,
-                               'limit': limit,
-                               'breadcrumbs': _breadcrumbs(path),
-                               'container_path': container_path,
-                               'containers': containers,
-                               'container': container,
-                               'object_path': object_path,
-                               'objects': objects},
-                              context_instance=RequestContext(request))
+    return render_to_response(
+        template,
+        {'path': path,
+         'marker': marker,
+         'marker_part': marker_part,
+         'limit': limit,
+         'breadcrumbs': _breadcrumbs(path),
+         'container_path': container_path,
+         'containers': containers,
+         'container': container,
+         'object_path': object_path,
+         'objects': objects}
+    )
 
 
 @settings_view_decorator
