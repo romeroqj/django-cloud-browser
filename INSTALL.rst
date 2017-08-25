@@ -106,10 +106,10 @@ URLs
 ----
 Next, add the URLs to your ``urls.py``::
 
-    urlpatterns = patterns('',
+    urlpatterns = [
         # ...
         url(r'^cb/', include('cloud_browser.urls')),
-    )
+    ]
 
 .. _install_admin:
 
@@ -146,7 +146,7 @@ URLs
 Cloud Browser has a separate set of templates and URLs for use in with the
 admin. Here's a suggested setup::
 
-    urlpatterns = patterns('',
+    urlpatterns = [
         # ...
 
         # Place Cloud Browser URLs **before** admin.
@@ -154,7 +154,7 @@ admin. Here's a suggested setup::
 
         # Admin URLs.
         url(r'^admin/', include(admin.site.urls)),
-    )
+    ]
 
 Static Media
 ============
